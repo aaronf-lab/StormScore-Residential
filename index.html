@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Will</title>
+<meta name="robots" content="noindex,nofollow">
+</head>
+<body>
+<style>
+  :root{
+    --ink:#0b0f14; --panel:#111820; --line:#1e2833;
+    --text:#e8eef5; --dim:#8fa3b8; --blue:#4a9eff; --blue-dim:#2b5f99;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6}
+  .wrap{max-width:660px;margin:0 auto;padding:34px 22px 90px}
+
+  .bar{display:flex;align-items:center;gap:8px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:26px}
+  .dot{width:9px;height:9px;border-radius:50%;background:#2a3542}
+  .dot.live{background:var(--blue);box-shadow:0 0 8px var(--blue)}
+  .bar span{margin-left:6px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+
+  #term{font-family:"SF Mono",Menlo,Consolas,"Roboto Mono",monospace;font-size:15px;line-height:1.85;min-height:210px}
+  #term .l{white-space:pre-wrap}
+  #term .accent{color:var(--blue)}
+  #term .muted{color:var(--dim)}
+  .cursor{display:inline-block;width:8px;height:17px;background:var(--blue);vertical-align:-3px;animation:bl 1s steps(2) infinite}
+  @keyframes bl{0%,50%{opacity:1}51%,100%{opacity:0}}
+
+  .rest{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+  .rest.in{opacity:1;transform:none}
+
+  .rule{height:1px;background:var(--line);margin:38px 0 30px}
+  h2{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:20px;font-weight:600}
+
+  .stage{background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--blue-dim);
+         border-radius:5px;padding:20px 22px;margin-bottom:14px}
+  .stage .n{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:11px;color:var(--blue);letter-spacing:.12em;margin-bottom:7px}
+  .stage h3{font-size:17px;margin-bottom:9px;font-weight:600;letter-spacing:-.01em}
+  .stage p{font-size:14.5px;color:#c3d2e0}
+  .stage p + p{margin-top:9px}
+
+  .note{border:1px dashed var(--line);border-radius:5px;padding:18px 20px;margin-top:26px}
+  .note h3{font-size:14px;color:var(--blue);margin-bottom:8px}
+  .note p{font-size:14px;color:#c3d2e0}
+
+  .close{margin-top:40px;padding-top:26px;border-top:1px solid var(--line);font-size:15px;color:#c3d2e0}
+  .close strong{color:var(--text)}
+  .sig{margin-top:26px;font-size:13px;color:var(--dim);line-height:1.7}
+  .sig b{color:var(--text);font-weight:600}
+
+  @media(max-width:520px){ .wrap{padding:26px 16px 70px} #term{font-size:13.5px} }
+</style>
+
+<div class="wrap">
+
+  <div class="bar">
+    <div class="dot live"></div><div class="dot"></div><div class="dot"></div>
+    <span>incoming — 1 message</span>
+  </div>
+
+  <div id="term"></div>
+
+  <div class="rest" id="rest">
+    <div class="rule"></div>
+
+    <h2>The idea, in three stages</h2>
+
+    <div class="stage">
+      <div class="n">STAGE 01</div>
+      <h3>The list builds itself</h3>
+      <p>Storms leave a footprint, and that footprint is knowable the same night it happens — which streets, which neighborhoods, which side of town.</p>
+      <p>So the target list is finished before anyone puts a door hanger in a truck. Nobody drives a grid hoping. The list arrives already sorted.</p>
+    </div>
+
+    <div class="stage">
+      <div class="n">STAGE 02</div>
+      <h3>Your bots make the calls</h3>
+      <p>You already run voice AI at volume for real estate. The infrastructure exists, the compliance work is done, the thing answers the phone and holds a conversation today.</p>
+      <p>Point it at the storm list instead. Same technology, same guardrails — a different script and a different reason to call. That is the entire lift.</p>
+    </div>
+
+    <div class="stage">
+      <div class="n">STAGE 03</div>
+      <h3>Warm hands, local rep, same day</h3>
+      <p>Conversations that go somewhere get routed to the rep who covers that ground, with the appointment already on the calendar.</p>
+      <p>Across thirty offices, that turns the hours after a storm — the hours that decide who gets the job — into something that runs whether or not anyone is awake.</p>
+    </div>
+
+    <div class="note">
+      <h3>And then there's the commercial side</h3>
+      <p>The same logic points at commercial buildings, where one good conversation is worth a great many residential ones. Nobody is doing this well. That is the part I find hardest to stop thinking about.</p>
+    </div>
+
+    <div class="close">
+      <p>There's real work between here and there, and I'd rather build it with you than hand you a pitch deck.</p>
+      <p style="margin-top:14px"><strong>So: happy birthday. The idea is yours if you want it.</strong></p>
+      <div class="sig">
+        <b>Aaron M. Forsman</b><br>
+        Commercial Roofing Asset Strategist<br>
+        Priority Commercial Nationwide<br>
+        952.220.9026 · aaronf@priorityroofs.com
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var lines = [
+    {t:"Happy birthday, Will.", c:"accent"},
+    {t:""},
+    {t:"I didn't get you anything you can unwrap."},
+    {t:""},
+    {t:"I've got an idea instead. I think it would move the"},
+    {t:"needle for every rep we have, and for the company."},
+    {t:""},
+    {t:"I'd rather gift you the idea — and the build — than"},
+    {t:"keep it and ask you for a favor later."},
+    {t:""},
+    {t:"Take ninety seconds. Tell me if you see it too.", c:"muted"}
+  ];
+  var el = document.getElementById('term');
+  var rest = document.getElementById('rest');
+  var li = 0;
+
+  function nextLine(){
+    if(li >= lines.length){
+      var c = document.querySelector('.cursor'); if(c) c.remove();
+      setTimeout(function(){ rest.classList.add('in'); }, 260);
+      return;
+    }
+    var spec = lines[li++];
+    var div = document.createElement('div');
+    div.className = 'l' + (spec.c ? ' ' + spec.c : '');
+    el.appendChild(div);
+    var old = document.querySelector('.cursor'); if(old) old.remove();
+    var cur = document.createElement('span'); cur.className = 'cursor';
+    div.appendChild(cur);
+
+    if(!spec.t){ setTimeout(nextLine, 260); return; }
+
+    var i = 0;
+    (function type(){
+      if(i < spec.t.length){
+        cur.insertAdjacentText('beforebegin', spec.t.charAt(i++));
+        setTimeout(type, 22 + Math.random()*26);
+      } else {
+        setTimeout(nextLine, 340);
+      }
+    })();
+  }
+  setTimeout(nextLine, 550);
+})();
+</script>
+
+</body>
+</html>
