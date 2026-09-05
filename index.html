@@ -5,104 +5,165 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>For Will</title>
 <meta name="robots" content="noindex,nofollow">
-</head>
-<body>
 <style>
-  :root{
-    --ink:#0b0f14; --panel:#111820; --line:#1e2833;
-    --text:#e8eef5; --dim:#8fa3b8; --blue:#4a9eff; --blue-dim:#2b5f99;
-  }
+  :root{--ink:#0b0f14;--panel:#111820;--line:#1e2833;--text:#e8eef5;--dim:#8fa3b8;--blue:#4a9eff;--blue2:#2b5f99}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-       color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6}
-  .wrap{max-width:660px;margin:0 auto;padding:34px 22px 90px}
-
+  body{background:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6}
+  .wrap{max-width:680px;margin:0 auto;padding:34px 22px 80px}
   .bar{display:flex;align-items:center;gap:8px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:26px}
   .dot{width:9px;height:9px;border-radius:50%;background:#2a3542}
   .dot.live{background:var(--blue);box-shadow:0 0 8px var(--blue)}
   .bar span{margin-left:6px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
-
-  #term{font-family:"SF Mono",Menlo,Consolas,"Roboto Mono",monospace;font-size:15px;line-height:1.85;min-height:210px}
+  #term{font-family:"SF Mono",Menlo,Consolas,"Roboto Mono",monospace;font-size:15px;line-height:1.85;min-height:230px}
   #term .l{white-space:pre-wrap}
   #term .accent{color:var(--blue)}
   #term .muted{color:var(--dim)}
   .cursor{display:inline-block;width:8px;height:17px;background:var(--blue);vertical-align:-3px;animation:bl 1s steps(2) infinite}
   @keyframes bl{0%,50%{opacity:1}51%,100%{opacity:0}}
-
   .rest{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
   .rest.in{opacity:1;transform:none}
+  .rule{height:1px;background:var(--line);margin:38px 0 28px}
+  h2{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;font-weight:600}
 
-  .rule{height:1px;background:var(--line);margin:38px 0 30px}
-  h2{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:20px;font-weight:600}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:15px 14px;text-align:center}
+  .stat .n{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:23px;color:var(--blue);font-weight:600;letter-spacing:-.02em}
+  .stat .k{font-size:10.5px;color:var(--dim);margin-top:5px;line-height:1.35}
 
-  .stage{background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--blue-dim);
-         border-radius:5px;padding:20px 22px;margin-bottom:14px}
-  .stage .n{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:11px;color:var(--blue);letter-spacing:.12em;margin-bottom:7px}
-  .stage h3{font-size:17px;margin-bottom:9px;font-weight:600;letter-spacing:-.01em}
+  .story{background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--blue);border-radius:5px;padding:20px 22px;margin:22px 0}
+  .story .tag{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:10.5px;color:var(--blue);letter-spacing:.12em;margin-bottom:9px}
+  .story p{font-size:14.5px;color:#c3d2e0}
+  .story p+p{margin-top:10px}
+  .story b{color:var(--text)}
+
+  .stage{background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--blue2);border-radius:5px;padding:19px 22px;margin-bottom:12px}
+  .stage .n{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:10.5px;color:var(--blue);letter-spacing:.12em;margin-bottom:7px}
+  .stage h3{font-size:16.5px;margin-bottom:9px;font-weight:600;letter-spacing:-.01em}
   .stage p{font-size:14.5px;color:#c3d2e0}
-  .stage p + p{margin-top:9px}
+  .stage p+p{margin-top:9px}
+  .stage b{color:var(--text)}
 
-  .note{border:1px dashed var(--line);border-radius:5px;padding:18px 20px;margin-top:26px}
-  .note h3{font-size:14px;color:var(--blue);margin-bottom:8px}
-  .note p{font-size:14px;color:#c3d2e0}
+  p.body{font-size:14.5px;color:#c3d2e0;margin-bottom:12px}
+  p.body b{color:var(--text)}
 
-  .close{margin-top:40px;padding-top:26px;border-top:1px solid var(--line);font-size:15px;color:#c3d2e0}
-  .close strong{color:var(--text)}
-  .sig{margin-top:26px;font-size:13px;color:var(--dim);line-height:1.7}
+  .money{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:6px 18px;margin-bottom:18px}
+  .mrow{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+  .mrow:last-child{border-bottom:none}
+  .ml{font-size:14px;color:#c3d2e0;line-height:1.35}
+  .ml span{display:block;font-size:11.5px;color:var(--dim);margin-top:3px}
+  .mv{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:17px;color:var(--blue);font-weight:600;white-space:nowrap}
+  .mrow.total{border-top:1px solid var(--blue2);margin-top:2px}
+  .mrow.total .ml{color:var(--text);font-weight:600;font-size:14.5px}
+  .mrow.total .mv{font-size:21px;color:#fff}
+
+  .cta{margin-top:34px;padding:24px 22px;background:linear-gradient(180deg,#12202e,#0e1721);border:1px solid var(--blue2);border-radius:6px;text-align:center}
+  .cta .h{font-size:17px;font-weight:600;margin-bottom:8px}
+  .cta p{font-size:14.5px;color:#c3d2e0;margin-bottom:16px}
+  .cta a{display:inline-block;background:var(--blue);color:#06121f;text-decoration:none;font-weight:700;font-size:17px;padding:13px 30px;border-radius:5px;letter-spacing:.01em}
+  .cta .sm{font-size:12.5px;color:var(--dim);margin-top:13px;margin-bottom:0}
+  .sig{margin-top:26px;font-size:13px;color:var(--dim);line-height:1.7;text-align:center}
   .sig b{color:var(--text);font-weight:600}
-
-  @media(max-width:520px){ .wrap{padding:26px 16px 70px} #term{font-size:13.5px} }
+  @media(max-width:520px){.wrap{padding:26px 16px 64px}#term{font-size:13.5px}.grid{grid-template-columns:repeat(2,1fr)}.stat .n{font-size:20px}}
 </style>
-
+</head>
+<body>
 <div class="wrap">
 
-  <div class="bar">
-    <div class="dot live"></div><div class="dot"></div><div class="dot"></div>
-    <span>incoming — 1 message</span>
-  </div>
+  <div class="bar"><div class="dot live"></div><div class="dot"></div><div class="dot"></div><span>incoming — 1 message</span></div>
 
   <div id="term"></div>
 
   <div class="rest" id="rest">
     <div class="rule"></div>
 
-    <h2>The idea, in three stages</h2>
+    <h2>This is not a concept. It is running right now.</h2>
+
+    <div class="grid">
+      <div class="stat"><div class="n">28,771</div><div class="k">buildings in the system</div></div>
+      <div class="stat"><div class="n">25,588</div><div class="k">already matched to a storm that hit them</div></div>
+      <div class="stat"><div class="n">748</div><div class="k">storms tracked and logged</div></div>
+      <div class="stat"><div class="n">12</div><div class="k">states covered</div></div>
+      <div class="stat"><div class="n">99%</div><div class="k">of buildings mapped to exact coordinates</div></div>
+      <div class="stat"><div class="n">62</div><div class="k">roofs we own and monitor</div></div>
+    </div>
+    <p class="body" style="font-size:13px;color:#8fa3b8;margin-bottom:26px">Every number above is a live count out of the system as of this week, not a projection.</p>
+
+    <div class="rule"></div>
+    <h2>Four buildings. Carrier-approved dollars. Not extrapolated.</h2>
+
+    <div class="money">
+      <div class="mrow"><div class="ml">Convenience store &amp; fuel — Twin Cities metro<span>TPO roof, gas canopy, metal skirting, interiors, HVAC</span></div><div class="mv">$296,000</div></div>
+      <div class="mrow"><div class="ml">Commercial locker plant — Starbuck, MN<span>metal roof, 43.34 squares</span></div><div class="mv">$65,403</div></div>
+      <div class="mrow"><div class="ml">Commercial storage facility — Starbuck, MN<span>3 structures · metal, foam, EPDM</span></div><div class="mv">$55,035</div></div>
+      <div class="mrow"><div class="ml">Residential — Brooklyn Park, MN<span>wind &amp; hail · closed and paid</span></div><div class="mv">$43,696</div></div>
+      <div class="mrow total"><div class="ml">Approved across four buildings</div><div class="mv">$460,134</div></div>
+    </div>
+
+    <p class="body">And that is not the finished number. On the convenience store there is <b>another $40,000 in signage still out</b>. On the storage facility, <b>$14,826 more in play</b> — scope the carrier missed plus depreciation they classified wrong. The Brooklyn Park file closed <b>36.2% above what the carrier first offered</b>, which is the number I'd point at hardest: <b>we grew an insurance company's own estimate by more than a third, on their paper, with their adjuster.</b></p>
+
+    <p class="body">Four files. Not a pipeline projection — <b>four real buildings, this year, mostly in towns of a few thousand people.</b></p>
+
+    <div class="rule"></div>
+    <h2>And knowing where to point it</h2>
+
+    <div class="story">
+      <div class="tag">FERGUS FALLS — LAST WEEK</div>
+      <p>We finished an install. Days later that address took hail again.</p>
+      <p><b>Our system flagged it within thirty minutes</b> — before the homeowner had finished texting us the photos. We already knew, and we already knew who else on that street got hit at the same time.</p>
+      <p>Nobody drove out looking. Nobody knocked a grid. The job told us.</p>
+    </div>
+
+    <p class="body">That is one address out of sixty-two roofs we watch. Every roof we install becomes another sensor, and the network gets more valuable every time we finish a job. <b>The asset compounds. It does not depreciate.</b></p>
+
+    <div class="story">
+      <div class="tag">AND ON THE $55,035 STORAGE FACILITY</div>
+      <p>Before anyone climbed on that roof, the system had already placed the building <b>inside the one-inch hail band for that storm</b> — a direct hit, with the next band up sitting 671 meters away.</p>
+      <p>The carrier approved it. We are supplementing it now. <b>The weather data and the carrier's own file agreed, and we knew which one we were walking into before we drove.</b></p>
+    </div>
+
+    <div class="rule"></div>
+    <h2>Where you come in — the three stages</h2>
 
     <div class="stage">
       <div class="n">STAGE 01</div>
-      <h3>The list builds itself</h3>
-      <p>Storms leave a footprint, and that footprint is knowable the same night it happens — which streets, which neighborhoods, which side of town.</p>
-      <p>So the target list is finished before anyone puts a door hanger in a truck. Nobody drives a grid hoping. The list arrives already sorted.</p>
+      <h3>The targeting problem is already solved</h3>
+      <p>Your dialer is running today for real estate agents hunting listings. That is a brutal search — <b>one in tens of thousands</b> of homeowners happens to be selling, and there is no way to know which one before you call.</p>
+      <p>Storm damage is the opposite kind of problem. We already know which streets got hit, and we knew the same night.</p>
     </div>
 
     <div class="stage">
       <div class="n">STAGE 02</div>
-      <h3>Your bots make the calls</h3>
-      <p>You already run voice AI at volume for real estate. The infrastructure exists, the compliance work is done, the thing answers the phone and holds a conversation today.</p>
-      <p>Point it at the storm list instead. Same technology, same guardrails — a different script and a different reason to call. That is the entire lift.</p>
+      <h3>Same dialer. Same cost. A list that isn't a guess.</h3>
+      <p>Nothing about the calling operation changes. Same crew, same system, same per-call cost.</p>
+      <p>The only thing that changes is who is on the list — and that is the entire margin. <b>A call to a house we know took hail is not the same call as a cold dial, and it never costs a dollar more to make.</b></p>
     </div>
 
     <div class="stage">
       <div class="n">STAGE 03</div>
-      <h3>Warm hands, local rep, same day</h3>
-      <p>Conversations that go somewhere get routed to the rep who covers that ground, with the appointment already on the calendar.</p>
-      <p>Across thirty offices, that turns the hours after a storm — the hours that decide who gets the job — into something that runs whether or not anyone is awake.</p>
+      <h3>Inspections on the calendar, thirty offices deep</h3>
+      <p>Conversations that go somewhere become inspections, routed to the rep who covers that ground with the appointment already set.</p>
+      <p>The hours right after a storm decide who gets the work. Right now those hours depend on who happens to be awake and driving. <b>They shouldn't.</b></p>
     </div>
 
-    <div class="note">
-      <h3>And then there's the commercial side</h3>
-      <p>The same logic points at commercial buildings, where one good conversation is worth a great many residential ones. Nobody is doing this well. That is the part I find hardest to stop thinking about.</p>
+    <div class="rule"></div>
+    <h2>The bigger half nobody is touching</h2>
+
+    <p class="body">The same targeting runs on commercial, and that is where the real money sits. We are already using it in rooms most roofing companies never get into — <b>a major university health system in Iowa, and a statewide healthcare engineering association in Tennessee.</b></p>
+
+    <p class="body">One commercial roof can be worth a neighborhood of residential. Almost nobody is going after them with real data, because almost nobody has it.</p>
+
+    <div class="cta">
+      <div class="h">Happy birthday, Will.</div>
+      <p>I'd rather hand you this than pitch you on it. If you see what I see, the build is yours.</p>
+      <a href="tel:9522209026">Call me — 952.220.9026</a>
+      <p class="sm">Fifteen minutes and I'll walk you through the whole thing.</p>
     </div>
 
-    <div class="close">
-      <p>There's real work between here and there, and I'd rather build it with you than hand you a pitch deck.</p>
-      <p style="margin-top:14px"><strong>So: happy birthday. The idea is yours if you want it.</strong></p>
-      <div class="sig">
-        <b>Aaron M. Forsman</b><br>
-        Commercial Roofing Asset Strategist<br>
-        Priority Commercial Nationwide<br>
-        952.220.9026 · aaronf@priorityroofs.com
-      </div>
+    <div class="sig">
+      <b>Aaron M. Forsman</b><br>
+      Commercial Roofing Asset Strategist<br>
+      Priority Commercial Nationwide<br>
+      aaronf@priorityroofs.com
     </div>
   </div>
 </div>
@@ -114,47 +175,31 @@
     {t:""},
     {t:"I didn't get you anything you can unwrap."},
     {t:""},
-    {t:"I've got an idea instead. I think it would move the"},
-    {t:"needle for every rep we have, and for the company."},
+    {t:"I built something instead. It's been running for months,"},
+    {t:"it's already producing, and I think it's worth more"},
+    {t:"pointed at your operation than it is sitting in mine."},
     {t:""},
-    {t:"I'd rather gift you the idea — and the build — than"},
-    {t:"keep it and ask you for a favor later."},
-    {t:""},
-    {t:"Take ninety seconds. Tell me if you see it too.", c:"muted"}
+    {t:"Ninety seconds. Then tell me I'm wrong.", c:"muted"}
   ];
-  var el = document.getElementById('term');
-  var rest = document.getElementById('rest');
-  var li = 0;
-
+  var el=document.getElementById('term'), rest=document.getElementById('rest'), li=0;
   function nextLine(){
-    if(li >= lines.length){
-      var c = document.querySelector('.cursor'); if(c) c.remove();
-      setTimeout(function(){ rest.classList.add('in'); }, 260);
-      return;
+    if(li>=lines.length){
+      var c=document.querySelector('.cursor'); if(c) c.remove();
+      setTimeout(function(){rest.classList.add('in');},260); return;
     }
-    var spec = lines[li++];
-    var div = document.createElement('div');
-    div.className = 'l' + (spec.c ? ' ' + spec.c : '');
-    el.appendChild(div);
-    var old = document.querySelector('.cursor'); if(old) old.remove();
-    var cur = document.createElement('span'); cur.className = 'cursor';
-    div.appendChild(cur);
-
-    if(!spec.t){ setTimeout(nextLine, 260); return; }
-
-    var i = 0;
+    var spec=lines[li++], div=document.createElement('div');
+    div.className='l'+(spec.c?' '+spec.c:''); el.appendChild(div);
+    var old=document.querySelector('.cursor'); if(old) old.remove();
+    var cur=document.createElement('span'); cur.className='cursor'; div.appendChild(cur);
+    if(!spec.t){ setTimeout(nextLine,250); return; }
+    var i=0;
     (function type(){
-      if(i < spec.t.length){
-        cur.insertAdjacentText('beforebegin', spec.t.charAt(i++));
-        setTimeout(type, 22 + Math.random()*26);
-      } else {
-        setTimeout(nextLine, 340);
-      }
+      if(i<spec.t.length){ cur.insertAdjacentText('beforebegin',spec.t.charAt(i++)); setTimeout(type,20+Math.random()*24); }
+      else { setTimeout(nextLine,330); }
     })();
   }
-  setTimeout(nextLine, 550);
+  setTimeout(nextLine,550);
 })();
 </script>
-
 </body>
 </html>
